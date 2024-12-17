@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border: 1px solid red;
+    }
+    td{
+        border: 1px solid black;
+        width: 40px;
+    }
+</style>
+<body>
+    
+</body>
+<script>
+
+    const students = [
+        {name: 'John', age: 20, grade: 90},
+        {name: 'Jane', age: 21, grade: 85},
+        {name: 'Bob', age: 19, grade: 95},
+        {name: 'Alice', age: 20, grade: 80},
+        {name: 'ghj', age: 220, grade: 880},
+        
+    ];
+    document.write("<table>")
+    for(row in students){
+        
+        document.write("<tr><td>" + row + "</td>" + "<td>" + students[row]['name'] + "</td><td>" + students[row]['age'] + "</td><td>" + students[row]['grade'] +"</td></tr>  ");
+    }
+    document.write("</table>")
+
+
+
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<br>");
+document.write("<h1>printing multi dimentional array</h1>");
+
+    let arr = [
+        [1, 2, 3] //0
+        [4, 5, 6] //1
+        [7, 8, 9] //2
+
+    ]
+
+    for(let row in arr)
+            {
+                console.log(arr[row] + row)
+            }
+
+</script>
+</html>

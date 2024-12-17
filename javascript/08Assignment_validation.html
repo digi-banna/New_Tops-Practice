@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" id="name"></td>
+                <td id="nameerr"></td>
+            </tr>
+
+            <tr>
+                <td>ID</td>
+                <td><input type="text" id="idd"></td>
+                <td id="iderr"></td>
+            </tr>
+
+            <tr>
+                <td>Subject</td>
+                <td><input type="text" id="subject"></td>
+                <td id="subjecterr"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        const form = document.getElementById("myForm");
+        const fields = [
+            { id: "name", errorId: "nameerr" },
+            { id: "idd", errorId: "iderr" },
+            { id: "subject", errorId: "subjecterr" }
+        ];
+
+        // Function to validate a single field
+        function validateField(field) {
+            const input = document.getElementById(field.id).value.trim();
+            const errorElement = document.getElementById(field.errorId);
+            errorElement.textContent = input === "" ? "Field is empty" : "";
+            return input !== "";
+        }
+
+        // Validate all fields on form submission
+        form.addEventListener("submit", (event) => {
+            let isValid = true;
+            fields.forEach((field) => {
+                if (!validateField(field)) isValid = false;
+            });
+            if (!isValid) event.preventDefault();
+        });
+
+        // Add blur event listeners to each field for real-time validation
+        fields.forEach((field) => {
+            const input = document.getElementById(field.id);
+            input.addEventListener("blur", () => validateField(field));
+        });
+    </script>
+</body>
+
+</html>
+    

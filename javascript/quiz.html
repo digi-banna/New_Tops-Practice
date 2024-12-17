@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table{
+        border: 2px solid red;
+    }
+    td{
+        border: 2px solid black;
+        width: 80px;
+    }
+</style>
+<body>
+    
+</body>
+<script>
+    let arr = [1, 2, 3, 4, 5];
+    let sum = 0;
+    for(i = 0; i<arr.length; i++){
+        
+        document.write(arr[i]);
+        sum = sum + arr[i];
+        
+    }
+    document.write("the sum of array is " + sum);
+
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+    document.write("<br>");
+
+    let a = [
+        {name: 'abcd', subject: 'hindi', marks: 5},
+        {name: 'efgh', subject: 'english', marks: 15},
+        {name: 'ijkl', subject: 'maths', marks: 25},
+        {name: 'mnop', subject: 'french', marks: 35}
+
+    ]
+    document.write("<table>");
+        document.write(  '<tr><td>' + "<b>name</b>" + '</td><td>' + "<b>subject</b>" + '</td><td>' + "<b>marks</b>" + '</td></tr>'  ) ; 
+    for(x in a){
+        document.write(  '<tr><td>' + a[x]["name"] + '</td><td>' + a[x]["subject"] + '</td><td>' + a[x]["marks"] + '</td></tr>'  ) ; 
+    }
+    document.write("</table>");
+
+</script>
+</html>
+
+
+
+
+
